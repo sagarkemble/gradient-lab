@@ -799,6 +799,16 @@ video {
   transition-duration: 150ms;
 }
 
+@keyframes reloadanimation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes animateGradient {
   0% {
     background-position: left;
@@ -833,6 +843,22 @@ video {
   100% {
     opacity: 1;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  opacity: 0;
+  background-color: black;
+  animation: fadeIn 0.2s ease-in forwards;
 }
 
 .title {
@@ -922,7 +948,11 @@ input[type="color"]::-moz-color-swatch {
 
 .maincontainer {
   z-index: -1;
-  transition: z-index 0.5s;
+  transition: opacity 0.2s;
+}
+
+.wrapper {
+  transition: opacity 0.2s;
 }
 
 .checked\:border-slate-800:checked{

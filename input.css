@@ -4,6 +4,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes reloadanimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 @keyframes animateGradient {
   0% {
@@ -33,6 +41,21 @@
   100% {
     opacity: 1;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  opacity: 0;
+  background-color: black;
+  animation: fadeIn 0.2s ease-in forwards;
 }
 
 .title {
@@ -111,5 +134,8 @@ input[type="color"]::-moz-color-swatch {
 }
 .maincontainer {
   z-index: -1;
-  transition: z-index 0.5s;
+  transition: opacity 0.2s;
+}
+.wrapper {
+  transition: opacity 0.2s;
 }

@@ -10,7 +10,18 @@ let activecolor1 = "#000000";
 let activecolor2 = "#000000";
 let activeswatch = null;
 defaultbutton.addEventListener("click", () => {
-  location.reload();
+  mainbackground.style.animation = "none";
+  background.style.backgroundImage = `linear-gradient(to right, black, black)`;
+  setTimeout(() => {
+    mainbackground.style.animation = "gradientchange 0.25s linear";
+  }, 5);
+  setTimeout(() => {
+    mainbackground.style.backgroundImage = `linear-gradient(to right, black, black)`;
+  }, 125);
+  document.querySelector(".wrapper").style.opacity = 0;
+  setTimeout(() => {
+    location.reload();
+  }, 250);
 });
 
 for (let i = 0; i < swatchGroups.length; i++) {
@@ -23,61 +34,93 @@ for (let i = 0; i < swatchGroups.length; i++) {
   let color2 = inputfield2.value;
   colorpicker1.value = color1;
   colorpicker2.value = color2;
+  const parentelement = swatchGroups[i];
+  let currenttargerobject = null;
 
-  inputfield1.addEventListener("input", () => {
+  inputfield1.addEventListener("input", (e) => {
     color1 = inputfield1.value;
     colorpicker1.value = color1;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    if (parentelement.classList.contains("active_group")) {
+      mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    }
   });
   inputfield2.addEventListener("input", () => {
     color2 = inputfield2.value;
     colorpicker2.value = color2;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    if (parentelement.classList.contains("active_group")) {
+      mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    }
   });
   colorpicker1.addEventListener("input", () => {
     color1 = colorpicker1.value;
     inputfield1.value = color1;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    if (parentelement.classList.contains("active_group")) {
+      mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    }
   });
 
   colorpicker2.addEventListener("input", () => {
     color2 = colorpicker2.value;
     inputfield2.value = color2;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    if (parentelement.classList.contains("active_group")) {
+      mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    }
   });
 
   swatch.addEventListener("click", (e) => {
     if (activeswatch !== null) {
       activeswatch.classList.remove("active");
+      parentelement.classList.remove("active_group");
     }
+    currenttargerobject = e.target;
     activeswatch = e.target;
     e.target.classList.add("active");
+    parentelement.classList.add("active_group");
     activecolor1 = color1;
     activecolor2 = color2;
     mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
   });
-  swatch.addEventListener("mouseover", () => {
-    mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
-    // mainbackground.style.animation = "gradientchange 0.5s linear";
-    // setTimeout(() => {
-    //   mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
-    // }, 250);
-    // background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+  // Handle mouseover
+  swatch.addEventListener("mouseover", (e) => {
+    if (e.target != currenttargerobject || currenttargerobject == null) {
+      mainbackground.style.animation = "none";
+      background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+      setTimeout(() => {
+        mainbackground.style.animation = "gradientchange 0.25s linear";
+      }, 5);
+      setTimeout(() => {
+        mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+        if (animatecheck.checked) {
+          mainbackground.style.animation =
+            "animateGradient 2s linear infinite alternate";
+        }
+      }, 125);
+    }
   });
 
-  swatch.addEventListener("mouseout", () => {
-    // Start the opacity animation on mainbackground
-    mainbackground.style.animation = "gradientchange 2s linear";
-    background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+  swatch.addEventListener("mouseout", (e) => {
+    if (e.target != currenttargerobject || currenttargerobject == null) {
+      mainbackground.style.animation = "none";
+      background.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
 
-    // Change the background after 1 second (half of 2s)
-    setTimeout(() => {
-      // Once halfway through, change the background color to active colors
-      mainbackground.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
-    }, 1000); // 1000 ms = 1 second, which is halfway of the 2s animation duration
+      setTimeout(() => {
+        mainbackground.style.animation = "gradientchange 0.25s linear";
+      }, 5);
+
+      setTimeout(() => {
+        mainbackground.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
+        if (animatecheck.checked) {
+          mainbackground.style.animation =
+            "animateGradient 2s linear infinite alternate";
+        }
+      }, 125);
+    }
   });
 }
-dasdfadffd;
 
 const animatecheck = document.querySelector("#animatecheckbox");
 animatecheck.addEventListener("change", () => {
