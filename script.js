@@ -1,27 +1,18 @@
-const defaultcolor1 = ["#ff0f7b", "#f89b29"];
-const defaultcolor2 = ["#0061ff", "#60efff"];
-const defaultcolor3 = ["#ff930f", "#fff95b"];
-const defaultcolor4 = ["#57ebde", "#aefb2a"];
 const mainbackground = document.querySelector(".maincontainer");
+const temp_background = document.querySelector(".background");
 const swatchGroups = document.querySelectorAll(".swatch_group");
 const defaultbutton = document.querySelector(".default");
-const background = document.querySelector(".background");
 let activecolor1 = "#000000";
 let activecolor2 = "#000000";
 let activeswatch = null;
+
 defaultbutton.addEventListener("click", () => {
-  mainbackground.style.animation = "none";
-  background.style.backgroundImage = `linear-gradient(to right, black, black)`;
-  setTimeout(() => {
-    mainbackground.style.animation = "gradientchange 0.25s linear";
-  }, 5);
-  setTimeout(() => {
-    mainbackground.style.backgroundImage = `linear-gradient(to right, black, black)`;
-  }, 125);
   document.querySelector(".wrapper").style.opacity = 0;
+  temp_background.style.opacity = 0;
+  mainbackground.style.opacity = 0;
   setTimeout(() => {
     location.reload();
-  }, 250);
+  }, 200);
 });
 
 for (let i = 0; i < swatchGroups.length; i++) {
@@ -32,10 +23,9 @@ for (let i = 0; i < swatchGroups.length; i++) {
   const colorpicker2 = swatchGroups[i].querySelector(".colorpicker2");
   let color1 = inputfield1.value;
   let color2 = inputfield2.value;
+  const parentelement = swatchGroups[i];
   colorpicker1.value = color1;
   colorpicker2.value = color2;
-  const parentelement = swatchGroups[i];
-  let currenttargerobject = null;
 
   inputfield1.addEventListener("input", (e) => {
     color1 = inputfield1.value;
@@ -72,11 +62,10 @@ for (let i = 0; i < swatchGroups.length; i++) {
   });
 
   swatch.addEventListener("click", (e) => {
-    if (activeswatch !== null) {
+    if (activeswatch != null) {
       activeswatch.classList.remove("active");
       parentelement.classList.remove("active_group");
     }
-    currenttargerobject = e.target;
     activeswatch = e.target;
     e.target.classList.add("active");
     parentelement.classList.add("active_group");
@@ -86,9 +75,9 @@ for (let i = 0; i < swatchGroups.length; i++) {
   });
   // Handle mouseover
   swatch.addEventListener("mouseover", (e) => {
-    if (e.target != currenttargerobject || currenttargerobject == null) {
+    if (e.target != activeswatch || activeswatch == null) {
       mainbackground.style.animation = "none";
-      background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+      temp_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
       setTimeout(() => {
         mainbackground.style.animation = "gradientchange 0.25s linear";
       }, 5);
@@ -103,9 +92,9 @@ for (let i = 0; i < swatchGroups.length; i++) {
   });
 
   swatch.addEventListener("mouseout", (e) => {
-    if (e.target != currenttargerobject || currenttargerobject == null) {
+    if (e.target != activeswatch || activeswatch == null) {
       mainbackground.style.animation = "none";
-      background.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
+      temp_background.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
 
       setTimeout(() => {
         mainbackground.style.animation = "gradientchange 0.25s linear";
@@ -121,7 +110,7 @@ for (let i = 0; i < swatchGroups.length; i++) {
     }
   });
 }
-
+let text_animation = false;
 const animatecheck = document.querySelector("#animatecheckbox");
 animatecheck.addEventListener("change", () => {
   if (animatecheck.checked) {

@@ -9,15 +9,24 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
-  <body>
-    <div class="background absolute h-screen w-screen"></div>
-    <div class="maincontainer absolute h-screen w-screen"></div>
+  <body class="h-screen w-screen">
+    <div class="background absolute h-full w-full overflow-hidden"></div>
+    <div class="maincontainer absolute h-screen w-screen overflow-hidden"></div>
 
     <div
-      class="wrapper flex h-screen w-screen flex-col items-center justify-center gap-10"
+      class="wrapper flex h-full w-full flex-col items-center justify-center gap-5 sm:justify-center"
     >
-      <h1 class="title font-poppins text-[50px] text-white">Gradient</h1>
+      <h1
+        class="title -mt-8 cursor-pointer font-poppins text-[35px] text-white sm:text-[50px]"
+      >
+        Gradient
+      </h1>
+
       <div class="inline-flex items-center">
         <div class="inline-flex items-center">
           <label class="relative flex cursor-pointer items-center">
@@ -56,7 +65,7 @@
         class="gradientSwatchHolder flex flex-col gap-5 font-robotomono text-[18px]"
       >
         <li id="group_1">
-          <div class="swatch_group flex items-center gap-3">
+          <div class="swatch_group flex items-center gap-2 sm:gap-3">
             <input class="colorpicker1" type="color" name="color" value="" />
             <input
               type="text"
@@ -65,7 +74,10 @@
               value="#ff0f7b"
             />
 
-            <div class="swatch flex h-20 w-44 rounded-lg" id="swatch-1"></div>
+            <div
+              class="swatch flex h-20 w-36 rounded-lg sm:h-20 sm:w-44"
+              id="swatch-1"
+            ></div>
             <input
               type="text"
               class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
@@ -76,7 +88,7 @@
           </div>
         </li>
         <li id="group_2">
-          <div class="swatch_group flex items-center gap-3">
+          <div class="swatch_group flex items-center gap-2 sm:gap-3">
             <input class="colorpicker1" type="color" name="color" value="" />
             <input
               type="text"
@@ -86,7 +98,7 @@
             />
 
             <div
-              class="swatch flex h-20 w-44 rounded-lg bg-white"
+              class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
               id="swatch-2"
             ></div>
             <input
@@ -99,7 +111,7 @@
           </div>
         </li>
         <li id="group_3">
-          <div class="swatch_group flex items-center gap-3">
+          <div class="swatch_group flex items-center gap-2 sm:gap-3">
             <input class="colorpicker1" type="color" name="color" value="" />
             <input
               type="text"
@@ -108,7 +120,7 @@
               value="#ff930f"
             />
             <div
-              class="swatch flex h-20 w-44 rounded-lg bg-white"
+              class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
               id="swatch-3"
             ></div>
             <input
@@ -121,7 +133,7 @@
           </div>
         </li>
         <li id="group_4">
-          <div class="swatch_group flex items-center gap-3">
+          <div class="swatch_group flex items-center gap-2 sm:gap-3">
             <input class="colorpicker1" type="color" name="color" value="" />
 
             <input
@@ -131,7 +143,7 @@
               value="#57ebde"
             />
             <div
-              class="swatch flex h-20 w-44 rounded-lg bg-white"
+              class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
               id="swatch-4"
             ></div>
             <input
@@ -145,12 +157,36 @@
         </li>
       </ul>
       <div
-        class="default cursor-pointer rounded-full bg-[rgba(255,255,255,0.1)] p-2 px-6 font-poppins text-[18px] font-medium text-white"
+        class="default cursor-pointer rounded-full bg-[rgba(255,255,255,0.1)] p-2 px-6 font-poppins text-[18px] font-medium text-slate-300 transition-all delay-100 hover:bg-[rgba(255,255,255,0.15)] hover:text-white"
       >
         Default
       </div>
       <div class="instruction text-[15px] font-medium text-slate-300">
         Click on gradient to change background
+      </div>
+      <div
+        class="social_links flex gap-5 overflow-hidden rounded-full bg-[rgba(255,255,255,0.1)] p-3 px-6 text-2xl text-slate-300"
+      >
+        <a href="" class="m-0 p-0">
+          <i
+            class="fa-brands fa-linkedin cursor-pointer transition-all delay-75 hover:text-white"
+          ></i>
+        </a>
+        <a href="">
+          <i
+            class="fa-brands fa-instagram cursor-pointer transition-all delay-75 hover:text-white"
+          ></i>
+        </a>
+        <a href="">
+          <i
+            class="fa-brands fa-github cursor-pointer transition-all delay-75 hover:text-white"
+          ></i>
+        </a>
+        <a href="">
+          <i
+            class="fa-brands fa-threads cursor-pointer transition-all delay-75 hover:text-white"
+          ></i>
+        </a>
       </div>
     </div>
     <script src="script.js"></script>
