@@ -77,6 +77,7 @@ for (let i = 0; i < swatchGroups.length; i++) {
     }, 1000); // 1000 ms = 1 second, which is halfway of the 2s animation duration
   });
 }
+dasdfadffd;
 
 const animatecheck = document.querySelector("#animatecheckbox");
 animatecheck.addEventListener("change", () => {
