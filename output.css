@@ -582,8 +582,16 @@ video {
   margin: 0px;
 }
 
-.-mt-8{
-  margin-top: -2rem;
+.mt-5{
+  margin-top: 1.25rem;
+}
+
+.mt-9{
+  margin-top: 2.25rem;
+}
+
+.mt-10{
+  margin-top: 2.5rem;
 }
 
 .flex{
@@ -684,8 +692,8 @@ video {
   align-items: center;
 }
 
-.justify-center{
-  justify-content: center;
+.justify-start{
+  justify-content: flex-start;
 }
 
 .gap-2{
@@ -694,6 +702,10 @@ video {
 
 .gap-5{
   gap: 1.25rem;
+}
+
+.gap-6{
+  gap: 1.5rem;
 }
 
 .overflow-hidden{
