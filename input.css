@@ -132,7 +132,6 @@ input[type="color"]::-moz-color-swatch {
 }
 .background {
   z-index: -1;
-  /* background-color: #aefb2a; */
 }
 .maincontainer {
   z-index: -1;

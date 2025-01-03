@@ -71,43 +71,68 @@ for (let i = 0; i < swatchGroups.length; i++) {
     parentelement.classList.add("active_group");
     activecolor1 = color1;
     activecolor2 = color2;
-    mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    fade_animation(e.target);
+
+    // mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
   });
   // Handle mouseover
   swatch.addEventListener("mouseover", (e) => {
-    if (e.target != activeswatch || activeswatch == null) {
+    fade_animation(e.target);
+    // if (e.target != activeswatch || activeswatch == null) {
+    //   mainbackground.style.animation = "none";
+    //   temp_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    //   setTimeout(() => {
+    //     mainbackground.style.animation = "gradientchange 0.25s linear";
+    //   }, 5);
+    //   setTimeout(() => {
+    //     mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+    //     if (animatecheck.checked) {
+    //       mainbackground.style.animation =
+    //         "animateGradient 2s linear infinite alternate";
+    //     }
+    //   }, 125);
+    // }
+  });
+
+  function fade_animation(function_caller, active_color_flag = false) {
+    if (function_caller != activeswatch || activeswatch == null) {
       mainbackground.style.animation = "none";
       temp_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
       setTimeout(() => {
         mainbackground.style.animation = "gradientchange 0.25s linear";
       }, 5);
       setTimeout(() => {
-        mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+        if (active_color_flag) {
+          mainbackground.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
+        } else {
+          mainbackground.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
         if (animatecheck.checked) {
           mainbackground.style.animation =
             "animateGradient 2s linear infinite alternate";
         }
       }, 125);
     }
-  });
+  }
 
   swatch.addEventListener("mouseout", (e) => {
-    if (e.target != activeswatch || activeswatch == null) {
-      mainbackground.style.animation = "none";
-      temp_background.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
+    fade_animation(e.target, true);
+    // if (e.target != activeswatch || activeswatch == null) {
+    //   mainbackground.style.animation = "none";
+    //   temp_background.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
 
-      setTimeout(() => {
-        mainbackground.style.animation = "gradientchange 0.25s linear";
-      }, 5);
+    //   setTimeout(() => {
+    //     mainbackground.style.animation = "gradientchange 0.25s linear";
+    //   }, 5);
 
-      setTimeout(() => {
-        mainbackground.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
-        if (animatecheck.checked) {
-          mainbackground.style.animation =
-            "animateGradient 2s linear infinite alternate";
-        }
-      }, 125);
-    }
+    //   setTimeout(() => {
+    //     mainbackground.style.backgroundImage = `linear-gradient(to right, ${activecolor1}, ${activecolor2})`;
+    //     if (animatecheck.checked) {
+    //       mainbackground.style.animation =
+    //         "animateGradient 2s linear infinite alternate";
+    //     }
+    //   }, 125);
+    // }
   });
 }
 let text_animation = false;
