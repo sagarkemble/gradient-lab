@@ -56,7 +56,7 @@
 body {
   opacity: 0;
   background-color: black;
-  animation: fadeIn 0.1s ease-in forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .title {
@@ -78,7 +78,6 @@ body {
   background-size: 400%;
   animation: animatedtext 2s linear forwards;
   color: white;
-  transition: all ease 1s;
 }
 
 #swatch-1 {
@@ -135,8 +134,8 @@ input[type="color"]::-moz-color-swatch {
 }
 .maincontainer {
   z-index: -1;
-  transition: opacity 0.1s;
+  transition: opacity 0.3s;
 }
-.wrapper {
-  transition: opacity 0.1s;
+.mainwrapper {
+  transition: opacity 0.3s;
 }

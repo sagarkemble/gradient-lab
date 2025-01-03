@@ -582,6 +582,10 @@ video {
   margin: 0px;
 }
 
+.mt-\[5vh\]{
+  margin-top: 5vh;
+}
+
 .flex{
   display: flex;
 }
@@ -689,20 +693,12 @@ video {
   justify-content: flex-start;
 }
 
-.justify-center{
-  justify-content: center;
-}
-
 .gap-2{
   gap: 0.5rem;
 }
 
 .gap-5{
   gap: 1.25rem;
-}
-
-.gap-4{
-  gap: 1rem;
 }
 
 .gap-6{
@@ -767,10 +763,6 @@ video {
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.pt-\[5vh\]{
-  padding-top: 5vh;
 }
 
 .font-poppins{
@@ -913,7 +905,7 @@ video {
 body {
   opacity: 0;
   background-color: black;
-  animation: fadeIn 0.1s ease-in forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .title {
@@ -935,7 +927,6 @@ body {
   background-size: 400%;
   animation: animatedtext 2s linear forwards;
   color: white;
-  transition: all ease 1s;
 }
 
 #swatch-1 {
@@ -1003,11 +994,11 @@ input[type="color"]::-moz-color-swatch {
 
 .maincontainer {
   z-index: -1;
-  transition: opacity 0.1s;
+  transition: opacity 0.3s;
 }
 
-.wrapper {
-  transition: opacity 0.1s;
+.mainwrapper {
+  transition: opacity 0.3s;
 }
 
 .checked\:border-slate-800:checked{

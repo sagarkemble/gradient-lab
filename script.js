@@ -7,12 +7,12 @@ let activecolor2 = "#000000";
 let activeswatch = null;
 
 defaultbutton.addEventListener("click", () => {
-  document.querySelector(".wrapper").style.opacity = 0;
+  document.querySelector(".mainwrapper").style.opacity = 0;
   temp_background.style.opacity = 0;
   mainbackground.style.opacity = 0;
   setTimeout(() => {
     location.reload();
-  }, 200);
+  }, 300);
 });
 
 for (let i = 0; i < swatchGroups.length; i++) {
