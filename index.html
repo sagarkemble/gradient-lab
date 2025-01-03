@@ -14,221 +14,224 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
-  <body class="h-screen w-screen">
-    <div class="background absolute h-full w-full overflow-hidden"></div>
-    <div class="maincontainer absolute h-screen w-screen overflow-hidden"></div>
-
+  <body>
     <div
-      class="wrapper flex h-full w-full flex-col items-center justify-start gap-6 sm:justify-center sm:gap-8"
+      class="mainwrapper flex h-screen w-screen flex-col items-center justify-start pt-[5vh] sm:justify-center"
     >
-      <h1
-        class="title mt-10 cursor-pointer font-poppins text-[35px] text-white sm:mt-0 sm:text-[50px]"
-      >
-        Gradient
-      </h1>
+      <div class="background absolute h-full w-full"></div>
+      <div class="maincontainer absolute h-full w-full"></div>
 
-      <div class="inline-flex items-center">
-        <div class="inline-flex items-center">
-          <label class="relative flex cursor-pointer items-center">
-            <input
-              type="checkbox"
-              class="peer h-4 w-4 cursor-pointer appearance-none rounded border-[2px] border-slate-300 shadow transition-all checked:border-slate-800 checked:bg-slate-800 hover:shadow-md"
-              id="animatecheckbox"
-            />
-            <span
-              class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-white opacity-0 peer-checked:opacity-100"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-3.5 w-3.5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                stroke="currentColor"
-                stroke-width="1"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </span>
-          </label>
-        </div>
-        <label
-          for="animatecheckbox"
-          class="translate-x-1 text-base font-semibold text-white"
-          >Animate</label
+      <div class="wrapper flex flex-col items-center gap-5">
+        <span
+          class="title cursor-pointer font-poppins text-[35px] text-white sm:mt-0 sm:text-[50px]"
         >
-      </div>
-      <ul
-        class="gradientSwatchHolder flex flex-col gap-5 font-robotomono text-[18px]"
-      >
-        <li id="group_1">
-          <div class="swatch_group flex items-center gap-2 sm:gap-3">
-            <input
-              class="colorpicker1"
-              type="color"
-              name="color"
-              value="#ff0f7b"
-            />
-            <input
-              type="text"
-              class="swatch_text_1 h-10 w-20 border-none bg-transparent font-normal text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#ff0f7b"
-            />
+          Gradient
+        </span>
 
-            <div
-              class="swatch flex h-20 w-36 rounded-lg sm:h-20 sm:w-44"
-              id="swatch-1"
-            ></div>
-            <input
-              type="text"
-              class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#f89b29"
-            />
-            <input
-              class="colorpicker2"
-              type="color"
-              name="color"
-              value="#f89b29"
-            />
+        <div class="inline-flex -translate-y-2 items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex cursor-pointer items-center">
+              <input
+                type="checkbox"
+                class="peer h-4 w-4 cursor-pointer appearance-none rounded border-[2px] border-slate-300 shadow transition-all checked:border-slate-800 checked:bg-slate-800 hover:shadow-md"
+                id="animatecheckbox"
+              />
+              <span
+                class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-white opacity-0 peer-checked:opacity-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+            </label>
           </div>
-        </li>
-        <li id="group_2">
-          <div class="swatch_group flex items-center gap-2 sm:gap-3">
-            <input
-              class="colorpicker1"
-              type="color"
-              name="color"
-              value="#0061ff"
-            />
-            <input
-              type="text"
-              class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#0061ff"
-            />
+          <label
+            for="animatecheckbox"
+            class="translate-x-1 text-base font-semibold text-white"
+            >Animate</label
+          >
+        </div>
+        <ul
+          class="gradientSwatchHolder flex flex-col gap-5 font-robotomono text-[18px]"
+        >
+          <li id="group_1">
+            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+              <input
+                class="colorpicker1"
+                type="color"
+                name="color"
+                value="#ff0f7b"
+              />
+              <input
+                type="text"
+                class="swatch_text_1 h-10 w-20 border-none bg-transparent font-normal text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#ff0f7b"
+              />
 
-            <div
-              class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
-              id="swatch-2"
-            ></div>
-            <input
-              type="text"
-              class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#60efff"
-            />
-            <input
-              class="colorpicker2"
-              type="color"
-              name="color"
-              value="#60efff"
-            />
-          </div>
-        </li>
-        <li id="group_3">
-          <div class="swatch_group flex items-center gap-2 sm:gap-3">
-            <input
-              class="colorpicker1"
-              type="color"
-              name="color"
-              value="#ff930f"
-            />
-            <input
-              type="text"
-              class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#ff930f"
-            />
-            <div
-              class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
-              id="swatch-3"
-            ></div>
-            <input
-              type="text"
-              class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#fff95b"
-            />
-            <input
-              class="colorpicker2"
-              type="color"
-              name="color"
-              value="#fff95b"
-            />
-          </div>
-        </li>
-        <li id="group_4">
-          <div class="swatch_group flex items-center gap-2 sm:gap-3">
-            <input
-              class="colorpicker1"
-              type="color"
-              name="color"
-              value="#57ebde"
-            />
+              <div
+                class="swatch flex h-20 w-36 rounded-lg sm:h-20 sm:w-44"
+                id="swatch-1"
+              ></div>
+              <input
+                type="text"
+                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#f89b29"
+              />
+              <input
+                class="colorpicker2"
+                type="color"
+                name="color"
+                value="#f89b29"
+              />
+            </div>
+          </li>
+          <li id="group_2">
+            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+              <input
+                class="colorpicker1"
+                type="color"
+                name="color"
+                value="#0061ff"
+              />
+              <input
+                type="text"
+                class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#0061ff"
+              />
 
-            <input
-              type="text"
-              class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#57ebde"
-            />
-            <div
-              class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
-              id="swatch-4"
-            ></div>
-            <input
-              type="text"
-              class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
-              spellcheck="false"
-              value="#aefb2a"
-            />
-            <input
-              class="colorpicker2"
-              type="color"
-              name="color"
-              value="#aefb2"
-            />
-          </div>
-        </li>
-      </ul>
-      <div
-        class="default cursor-pointer rounded-full bg-[rgba(255,255,255,0.1)] p-2 px-6 font-poppins text-[18px] font-medium text-slate-300 transition-all delay-100 hover:bg-[rgba(255,255,255,0.15)] hover:text-white"
-      >
-        Default
-      </div>
-      <div class="instruction text-[15px] font-medium text-slate-300">
-        Click on gradient to change background
-      </div>
-      <div
-        class="social_links flex gap-5 overflow-hidden rounded-full bg-[rgba(255,255,255,0.1)] px-6 py-2 text-2xl text-slate-300"
-      >
-        <a href="" class="m-0 p-0">
-          <i
-            class="fa-brands fa-linkedin cursor-pointer transition-all delay-75 hover:text-white"
-          ></i>
-        </a>
-        <a href="">
-          <i
-            class="fa-brands fa-instagram cursor-pointer transition-all delay-75 hover:text-white"
-          ></i>
-        </a>
-        <a href="">
-          <i
-            class="fa-brands fa-github cursor-pointer transition-all delay-75 hover:text-white"
-          ></i>
-        </a>
-        <a href="">
-          <i
-            class="fa-brands fa-threads cursor-pointer transition-all delay-75 hover:text-white"
-          ></i>
-        </a>
+              <div
+                class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
+                id="swatch-2"
+              ></div>
+              <input
+                type="text"
+                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#60efff"
+              />
+              <input
+                class="colorpicker2"
+                type="color"
+                name="color"
+                value="#60efff"
+              />
+            </div>
+          </li>
+          <li id="group_3">
+            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+              <input
+                class="colorpicker1"
+                type="color"
+                name="color"
+                value="#ff930f"
+              />
+              <input
+                type="text"
+                class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#ff930f"
+              />
+              <div
+                class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
+                id="swatch-3"
+              ></div>
+              <input
+                type="text"
+                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#fff95b"
+              />
+              <input
+                class="colorpicker2"
+                type="color"
+                name="color"
+                value="#fff95b"
+              />
+            </div>
+          </li>
+          <li id="group_4">
+            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+              <input
+                class="colorpicker1"
+                type="color"
+                name="color"
+                value="#57ebde"
+              />
+
+              <input
+                type="text"
+                class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#57ebde"
+              />
+              <div
+                class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
+                id="swatch-4"
+              ></div>
+              <input
+                type="text"
+                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                spellcheck="false"
+                value="#aefb2a"
+              />
+              <input
+                class="colorpicker2"
+                type="color"
+                name="color"
+                value="#aefb2"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          class="default cursor-pointer rounded-full bg-[rgba(255,255,255,0.1)] p-2 px-6 font-poppins text-[18px] font-medium text-slate-300 transition-all delay-100 hover:bg-[rgba(255,255,255,0.15)] hover:text-white"
+        >
+          Default
+        </div>
+        <div class="instruction text-[15px] font-medium text-slate-300">
+          Click on gradient to change background
+        </div>
+        <div
+          class="social_links flex gap-5 overflow-hidden rounded-full bg-[rgba(255,255,255,0.1)] px-6 py-2 text-2xl text-slate-300"
+        >
+          <a href="" class="m-0 p-0">
+            <i
+              class="fa-brands fa-linkedin cursor-pointer transition-all delay-75 hover:text-white"
+            ></i>
+          </a>
+          <a href="">
+            <i
+              class="fa-brands fa-instagram cursor-pointer transition-all delay-75 hover:text-white"
+            ></i>
+          </a>
+          <a href="">
+            <i
+              class="fa-brands fa-github cursor-pointer transition-all delay-75 hover:text-white"
+            ></i>
+          </a>
+          <a href="">
+            <i
+              class="fa-brands fa-threads cursor-pointer transition-all delay-75 hover:text-white"
+            ></i>
+          </a>
+        </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
