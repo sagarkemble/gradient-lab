@@ -582,14 +582,6 @@ video {
   margin: 0px;
 }
 
-.mt-5{
-  margin-top: 1.25rem;
-}
-
-.mt-9{
-  margin-top: 2.25rem;
-}
-
 .mt-10{
   margin-top: 2.5rem;
 }
@@ -758,13 +750,19 @@ video {
   padding: 0.5rem;
 }
 
-.p-3{
-  padding: 0.75rem;
-}
-
 .px-6{
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .font-poppins{
