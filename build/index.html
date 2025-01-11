@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gradient</title>
+    <link rel="stylesheet" href="output.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"
@@ -12,22 +13,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link rel="stylesheet" crossorigin href="/assets/index-DGWuDOr9.css" />
   </head>
-  <body>
+  <body class="overflow-hidden sm:overflow-auto">
+    <div class="main-background absolute h-full w-full"></div>
     <div
-      class="mainwrapper flex h-screen w-screen flex-col items-center justify-start gap-6 sm:justify-center"
+      class="main-container relative flex h-screen flex-col items-center justify-center gap-[2vh] overflow-hidden font-poppins sm:gap-6 sm:overflow-auto"
     >
-      <div class="background absolute h-full w-full"></div>
-      <div class="maincontainer absolute h-full w-full"></div>
-
-      <div class="wrapper flex flex-col items-center gap-5">
-        <span
-          class="title mt-[5vh] cursor-pointer font-poppins text-[35px] text-white sm:mt-0 sm:text-[50px]"
-        >
-          Gradient
-        </span>
-
+      <div class="title-wrapper text-4xl text-white sm:text-5xl">
+        <p>Gradient</p>
+      </div>
+      <div class="animation-toggle-wrapper">
         <div class="inline-flex -translate-y-2 items-center">
           <div class="inline-flex items-center">
             <label class="relative flex cursor-pointer items-center">
@@ -58,15 +53,17 @@
           </div>
           <label
             for="animatecheckbox"
-            class="translate-x-1 text-base font-semibold text-white"
+            class="translate-x-1 text-base font-medium text-white"
             >Animate</label
           >
         </div>
-        <ul
-          class="gradientSwatchHolder flex flex-col gap-5 font-robotomono text-[18px]"
-        >
-          <li id="group_1">
-            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+      </div>
+      <div class="swatch-container font-robotomono">
+        <ul class="flex flex-col gap-4">
+          <li id="swatch-li-1">
+            <div
+              class="swatch-group gap flex items-center gap-[clamp(0rem,1vw,2rem)]"
+            >
               <input
                 class="colorpicker1"
                 type="color"
@@ -75,18 +72,18 @@
               />
               <input
                 type="text"
-                class="swatch_text_1 h-10 w-20 border-none bg-transparent font-normal text-gray-100 focus:outline-none"
+                class="swatch-text-1 h-10 w-[clamp(0rem,25vw,5rem)] bg-transparent font-normal text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#ff0f7b"
               />
 
               <div
-                class="swatch flex h-20 w-36 rounded-lg sm:h-20 sm:w-44"
+                class="swatch flex h-20 w-[30vw] max-w-36 rounded-lg bg-white sm:h-20 sm:w-44"
                 id="swatch-1"
               ></div>
               <input
                 type="text"
-                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-2 h-10 w-[clamp(0rem,25vw,5rem)] translate-x-3 bg-transparent text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#f89b29"
               />
@@ -98,8 +95,10 @@
               />
             </div>
           </li>
-          <li id="group_2">
-            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+          <li id="swatch-li-2">
+            <div
+              class="swatch-group gap flex items-center gap-[clamp(0rem,1vw,2rem)]"
+            >
               <input
                 class="colorpicker1"
                 type="color"
@@ -108,18 +107,18 @@
               />
               <input
                 type="text"
-                class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-1 h-10 w-[clamp(0rem,25vw,5rem)] bg-transparent font-normal text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#0061ff"
               />
 
               <div
-                class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
+                class="swatch flex h-20 w-[30vw] max-w-36 rounded-lg bg-white sm:h-20 sm:w-44"
                 id="swatch-2"
               ></div>
               <input
                 type="text"
-                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-2 h-10 w-[clamp(0rem,25vw,5rem)] translate-x-3 bg-transparent text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#60efff"
               />
@@ -131,8 +130,10 @@
               />
             </div>
           </li>
-          <li id="group_3">
-            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+          <li id="swatch-li-3">
+            <div
+              class="swatch-group gap flex items-center gap-[clamp(0rem,1vw,2rem)]"
+            >
               <input
                 class="colorpicker1"
                 type="color"
@@ -141,17 +142,18 @@
               />
               <input
                 type="text"
-                class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-1 h-10 w-[clamp(0rem,25vw,5rem)] bg-transparent font-normal text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#ff930f"
               />
+
               <div
-                class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
+                class="swatch flex h-20 w-[30vw] max-w-36 rounded-lg bg-white sm:h-20 sm:w-44"
                 id="swatch-3"
               ></div>
               <input
                 type="text"
-                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-2 h-10 w-[clamp(0rem,25vw,5rem)] translate-x-3 bg-transparent text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#fff95b"
               />
@@ -163,28 +165,30 @@
               />
             </div>
           </li>
-          <li id="group_4">
-            <div class="swatch_group flex items-center gap-2 sm:gap-3">
+          <li id="swatch-li-4">
+            <div
+              class="swatch-group gap flex items-center gap-[clamp(0rem,1vw,2rem)]"
+            >
               <input
                 class="colorpicker1"
                 type="color"
                 name="color"
                 value="#57ebde"
               />
-
               <input
                 type="text"
-                class="swatch_text_1 h-10 w-20 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-1 h-10 w-[clamp(0rem,25vw,5rem)] bg-transparent font-normal text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#57ebde"
               />
+
               <div
-                class="swatch flex h-20 w-36 rounded-lg bg-white sm:h-20 sm:w-44"
+                class="swatch flex h-20 w-[30vw] max-w-36 rounded-lg bg-white sm:h-20 sm:w-44"
                 id="swatch-4"
               ></div>
               <input
                 type="text"
-                class="swatch_text_2 h-10 w-20 translate-x-2 border-none bg-transparent text-gray-100 focus:outline-none"
+                class="swatch-text-2 h-10 w-[clamp(0rem,25vw,5rem)] translate-x-3 bg-transparent text-gray-100 focus:outline-none"
                 spellcheck="false"
                 value="#aefb2a"
               />
@@ -198,17 +202,16 @@
           </li>
         </ul>
       </div>
-
       <div
-        class="default cursor-pointer rounded-full bg-[rgba(255,255,255,0.1)] p-2 px-6 font-poppins text-[18px] font-medium text-slate-300 transition-all delay-100 hover:bg-[rgba(255,255,255,0.15)] hover:text-white"
+        class="default-button cursor-pointer rounded-full bg-[rgba(255,255,255,0.1)] p-2 px-6 font-poppins text-[18px] font-medium text-slate-300 transition-all delay-100 hover:bg-[rgba(255,255,255,0.15)] hover:text-white"
       >
         Default
       </div>
-      <div class="instruction text-[15px] font-medium text-slate-300">
+      <div class="instruction text-sm font-medium text-slate-300">
         Click on gradient to change background
       </div>
       <div
-        class="social_links flex gap-5 overflow-hidden rounded-full bg-[rgba(255,255,255,0.1)] px-6 py-2 text-2xl text-slate-300"
+        class="social-links-wrapper flex gap-5 rounded-full bg-[rgba(255,255,255,0.1)] px-6 py-2 text-2xl text-slate-300"
       >
         <a href="" class="m-0 p-0">
           <i
@@ -232,7 +235,6 @@
         </a>
       </div>
     </div>
-
-    <script src="assets/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
