@@ -51,7 +51,7 @@ for (let i = 0; i < swatchGroups.length; i++) {
     colorpicker1.value = color1;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     if (parentelement.classList.contains("active_group")) {
-      body.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+      main_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     }
   });
   inputfield2.addEventListener("input", () => {
@@ -59,7 +59,7 @@ for (let i = 0; i < swatchGroups.length; i++) {
     colorpicker2.value = color2;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     if (parentelement.classList.contains("active_group")) {
-      body.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+      main_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     }
   });
   colorpicker1.addEventListener("input", () => {
@@ -67,7 +67,7 @@ for (let i = 0; i < swatchGroups.length; i++) {
     inputfield1.value = color1;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     if (parentelement.classList.contains("active_group")) {
-      body.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+      main_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     }
   });
 
@@ -76,7 +76,7 @@ for (let i = 0; i < swatchGroups.length; i++) {
     inputfield2.value = color2;
     swatch.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     if (parentelement.classList.contains("active_group")) {
-      body.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+      main_background.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
     }
   });
   swatch.addEventListener("click", (e) => {
