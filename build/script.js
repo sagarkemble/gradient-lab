@@ -12,7 +12,7 @@ defaultButton.addEventListener("click", () => {
   main_background.style.opacity = 0;
   setTimeout(() => {
     location.reload();
-  }, 300);
+  }, 200);
 });
 for (let i = 0; i < swatchGroups.length; i++) {
   const inputfield1 = swatchGroups[i].querySelector(".swatch-text-1");

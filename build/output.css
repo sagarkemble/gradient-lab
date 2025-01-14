@@ -981,14 +981,14 @@ input[type="color"] {
 
 .main-container {
   z-index: 3;
-  animation: fadeIn 0.2s linear;
-  transition: opacity 0.25s linear;
+  animation: fadeIn 0.5s linear;
+  transition: opacity 0.2s linear;
 }
 
 .main-background {
   z-index: 2;
   background: linear-gradient(to right, black, black);
-  transition: opacity 0.25s linear;
+  transition: opacity 0.2s linear;
 }
 
 .checked\:border-slate-800:checked{
