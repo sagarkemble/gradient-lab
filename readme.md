@@ -2,7 +2,7 @@
   class="container"
   align="center"
 >
- <img src="build/icon.png"/>
+ <img src="build/icon2.png"/>
 
 # Gradient Lab
 
