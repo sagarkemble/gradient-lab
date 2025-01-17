@@ -1,19 +1,12 @@
 <div
   class="container"
-  style="
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    line-height: 1rem;
-  "
+  align="center"
 >
-  <div class="wrapper">
-    <img src="build/icon.png" alt="" />
-  </div>
-  <div class="wrapper">
-    <h1>Gradient Lab</h1>
-  </div>
+
+ <img src="build/icon.png" alt="" />
+
+# Gradient Lab
+
   <p align="center">
     <a href="https://gradient-lab.vercel.app">Visit</a>
     &middot;
