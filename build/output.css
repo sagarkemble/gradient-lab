@@ -1042,8 +1042,4 @@ input[type="color"] {
     font-size: 3rem;
     line-height: 1;
   }
-
-  .sm\:text-\[1\.6vh\]{
-    font-size: 1.6vh;
-  }
 }
